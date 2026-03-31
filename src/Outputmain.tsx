@@ -128,7 +128,7 @@ export default function Outputmain(){
     const [value, setValue] = useState(0);
 
     //タブ機能実装のため（出退勤リストと削除リストの切り替え）
-    const tabChange  = (event: React.SyntheticEvent, newValue: number) => {
+    const tabChange  = (_event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
     };
 

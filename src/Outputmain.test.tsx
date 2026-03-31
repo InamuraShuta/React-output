@@ -1,4 +1,4 @@
-import { render, screen,within ,fireEvent,act } from '@testing-library/react'
+import { render, screen,within ,act } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import Outputmain from './Outputmain'
 

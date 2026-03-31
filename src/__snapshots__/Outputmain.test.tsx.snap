@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Outputmain #14:スナップショットテスト（初期状態） 1`] = `
+<DocumentFragment>
+  <h2
+    data-testid="title"
+  >
+    出退勤アプリ（テスト）
+  </h2>
+  <div
+    class="main-user-select-container MuiBox-root css-0"
+  >
+    <div
+      class="MuiFormControl-root MuiFormControl-fullWidth css-ytlejw-MuiFormControl-root"
+    >
+      <label
+        class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-113d811-MuiFormLabel-root-MuiInputLabel-root"
+        data-shrink="true"
+        id="demo-simple-select-label"
+      >
+        ユーザー選択
+      </label>
+      <div
+        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiSelect-root css-sc8y68-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-labelledby="demo-simple-select-label demo-simple-select"
+          class="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-18jp67o-MuiNativeSelect-root-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+          id="demo-simple-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <span
+            aria-hidden="true"
+            class="notranslate"
+          >
+            ​
+          </span>
+        </div>
+        <input
+          aria-hidden="true"
+          aria-invalid="false"
+          class="MuiSelect-nativeInput css-j0riat-MuiSelect-nativeInput"
+          tabindex="-1"
+          value="0"
+        />
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-1rfqz7c-MuiSvgIcon-root-MuiNativeSelect-root-MuiSelect-icon"
+          data-testid="ArrowDropDownIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7 10l5 5 5-5z"
+          />
+        </svg>
+        <fieldset
+          aria-hidden="true"
+          class="MuiOutlinedInput-notchedOutline css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+        >
+          <legend
+            class="css-ex8a5f-MuiNotchedOutlined-root"
+          >
+            <span>
+              Name
+            </span>
+          </legend>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+  <div
+    style="font-size: 1.5rem; margin: 10px 0px;"
+  >
+    現在時刻: 10:00:00
+  </div>
+  <div>
+    <div>
+      <button>
+        出勤
+      </button>
+      <span />
+    </div>
+    <div>
+      <button
+        disabled=""
+      >
+        退勤
+      </button>
+      <span />
+    </div>
+  </div>
+  <br />
+  <div
+    class="MuiBox-root css-0"
+  >
+    <div
+      class="main-tabs-border MuiBox-root css-0"
+    >
+      <div
+        class="MuiTabs-root css-jhczcq-MuiTabs-root"
+      >
+        <div
+          class="MuiTabs-scroller MuiTabs-fixed css-s2t35c-MuiTabs-scroller"
+          style="overflow: hidden; margin-bottom: 0px;"
+        >
+          <div
+            aria-label="basic tabs example"
+            class="MuiTabs-list MuiTabs-flexContainer css-hzcega-MuiTabs-list"
+            role="tablist"
+          >
+            <button
+              aria-selected="true"
+              class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1usuzwp-MuiButtonBase-root-MuiTab-root"
+              id="tab0"
+              role="tab"
+              tabindex="0"
+              type="button"
+            >
+              出退勤リスト表示
+            </button>
+            <button
+              aria-selected="false"
+              class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-1usuzwp-MuiButtonBase-root-MuiTab-root"
+              id="tab1"
+              role="tab"
+              tabindex="-1"
+              type="button"
+            >
+              出退勤削除リスト表示
+            </button>
+          </div>
+          <span
+            class="MuiTabs-indicator css-1qltlow-MuiTabs-indicator"
+            style="left: 0px; width: 0px;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      aria-labelledby="tab0"
+      id="tab0"
+      role="tabpanel"
+    >
+      <div
+        class="tab-panel-padding MuiBox-root css-0"
+      >
+        <div
+          class="output-display-area"
+          data-testid="mock-outputdisplay"
+        >
+          <span
+            data-testid="current-disch"
+          >
+            FILTER_OFF
+          </span>
+          <button>
+            MockFilter
+          </button>
+          <ul
+            class="output-list"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      aria-labelledby="tab1"
+      hidden=""
+      id="tab1"
+      role="tabpanel"
+    />
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,62 @@
+/* リスト全体のスタイル */
+.output-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* リストアイテム一行のスタイル */
+.output-list-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* チェックボックスのスタイル */
+.output-checkbox {
+    margin-right: 8px;
+}
+
+/* アイコン用コンテナのスタイル */
+.output-icon-box {
+    display: flex;
+    align-items: center;
+    min-width: 30px;
+    justify-content: center;
+}
+
+/* テキスト表示部分のスタイル */
+.output-text-box {
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+/* チェック時のテキスト色（赤） */
+.output-text-box.checked {
+    color: red;
+}
+
+/* 通常時のテキスト色（黒） */
+.output-text-box.normal {
+    color: black;
+}
+
+/* 削除ボタンを右端に寄せるためのスタイル */
+.output-delete-btn-wrapper {
+    margin-left: auto;
+}
+
+/* ユーザー選択のコンテナ */
+.main-user-select-container {
+    min-width: 50px;
+}
+
+/* タブの境界線 */
+.main-tabs-border {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12); /* divider相当の色 */
+}
+
+/* タブパネル内の余白 */
+.tab-panel-padding {
+    padding: 24px; /* p: 3 (8px * 3) 相当 */
+}

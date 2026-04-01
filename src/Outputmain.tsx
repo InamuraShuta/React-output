@@ -12,6 +12,9 @@ import FormControl from '@mui/material/FormControl';
 //プルダウン機能
 import { Select, type SelectChangeEvent } from '@mui/material';
 
+//サインアウトようimport
+import { useAuthenticator} from "@aws-amplify/ui-react";
+
 //データの形を定義（複数のコンポーネントで使うためexport推奨）
 export interface TimeEntry {
   id: string
@@ -52,6 +55,9 @@ export default function Outputmain(){
     //課題で追加
     const [totallist,setTotallist] = useState<TimeEntry[]>([])
     const [disch,setDisch] = useState(false)
+
+    //サインアウト用
+    const {signOut} = useAuthenticator()
 
 
     // 秒数を「〇時間〇分〇秒」に変換する関数
@@ -185,6 +191,12 @@ export default function Outputmain(){
 
     return(
       <>
+        <div>
+          {/* <span>ログインユーザー: {user?.signInDetails?.loginId}</span> */}
+          <button onClick={signOut}>
+            サインアウト
+          </button>
+        </div>
         <h2 data-testid="title">出退勤アプリ（テスト）</h2>
 
           <Box className="main-user-select-container">

@@ -15,6 +15,9 @@ import { Select, type SelectChangeEvent } from '@mui/material';
 //サインアウトようimport
 import { useAuthenticator} from "@aws-amplify/ui-react";
 
+//Cognito連携
+import { fetchAuthSession } from 'aws-amplify/auth'
+
 //データの形を定義（複数のコンポーネントで使うためexport推奨）
 export interface TimeEntry {
   id: string
@@ -63,7 +66,17 @@ export default function Outputmain(){
     const [users,setUsers] = useState<string[]>([])
 
     const fetchusers = async () => {
-      const userresponse = await fetch('https://6ub4o9npq3.execute-api.ap-northeast-1.amazonaws.com/testuserget/user')
+      //今のログインセッションから「IDトークン」を取得する
+      const session = await fetchAuthSession()
+      const token = session.tokens?.idToken?.toString()
+      const userresponse = await fetch('https://6ub4o9npq3.execute-api.ap-northeast-1.amazonaws.com/testuserget/user',{
+        method: 'GET',
+        headers: {
+          //「鍵」の提示
+          'Authorization': token || '',
+          'Content-Type': 'application/json'
+        }
+      })
       const userdata = await userresponse.json()
       setUsers(userdata)
     }

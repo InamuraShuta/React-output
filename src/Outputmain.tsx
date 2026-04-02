@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import './style.css';
 import Clock from "./Clock"
 import Outputdisplay from './outputdisplay';
@@ -67,6 +67,17 @@ export default function Outputmain(){
       const userdata = await userresponse.json()
       setUsers(userdata)
     }
+
+    //事前出退勤記録取得
+    const fetchtimelist = async () => {
+      const timeresponse = await fetch('https://6ub4o9npq3.execute-api.ap-northeast-1.amazonaws.com/testuserget/time')
+      const timedata = await timeresponse.json()
+      setTotallist(timedata)
+    }
+
+    useEffect(()=>{
+      fetchtimelist()
+    },[])
 
 
     // 秒数を「〇時間〇分〇秒」に変換する関数

@@ -102,7 +102,7 @@ export default function Outputmain(){
       const newEntry:TimeEntry = {
         id: crypto.randomUUID(), // ユニークなIDを生成
         time: diffSec,
-        userName: userLabels[Number(userId)],
+        userName: userId,
         check:false,
         delete:false
       };
@@ -155,13 +155,6 @@ export default function Outputmain(){
         setUserId(event.target.value)
     }
 
-    //オブジェクトの型を簡単に作るためのテンプレート
-    const userLabels: Record<number, string> = {
-    1: "ユーザー1",
-    2: "ユーザー2",
-    3: "ユーザー3"
-};
-
     //ユーザー未選択時に出勤が押されないようにしている
     const startdis = ()=>{
 
@@ -169,7 +162,7 @@ export default function Outputmain(){
         setNonamemess('ユーザーを選択してください')
       }
 
-      if (!userLabels[Number(userId)]){
+      if (!userId){
         return (
           <>
           <div>
@@ -246,7 +239,7 @@ export default function Outputmain(){
           </Box>
 
           <CustomTabPanel value={value} index={0}>
-            <Outputdisplay list={totallist} formatTime={formatTime} deletedata={deletedata} onCheck={onCheck} UserName={userLabels[Number(userId)]} disch={disch} setD={setDisch}/>
+            <Outputdisplay list={totallist} formatTime={formatTime} deletedata={deletedata} onCheck={onCheck} UserName={userId} disch={disch} setD={setDisch}/>
           </CustomTabPanel>
           <CustomTabPanel value={value} index={1}>
             <Outputdeletedisplay deletelist={totallist} formatTime={formatTime}/>

@@ -14,9 +14,9 @@ Amplify.configure(outputs)
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Authenticator.Provider> {/* Providerで囲むのがコツです */}
+    <Authenticator.Provider>
       <Authenticator>
-        <Outputmain /> {/* Propsを渡さず、ただ呼び出すだけ */}
+        <Outputmain />
       </Authenticator>
     </Authenticator.Provider>
   </StrictMode>,

@@ -59,6 +59,15 @@ export default function Outputmain(){
     //サインアウト用
     const {signOut} = useAuthenticator()
 
+    //ユーザー取得
+    const [users,setUsers] = useState<string[]>([])
+
+    const fetchusers = async () => {
+      const userresponse = await fetch('https://6ub4o9npq3.execute-api.ap-northeast-1.amazonaws.com/testuserget/user')
+      const userdata = await userresponse.json()
+      setUsers(userdata)
+    }
+
 
     // 秒数を「〇時間〇分〇秒」に変換する関数
     const formatTime = (seconds:number) => {
@@ -208,10 +217,14 @@ export default function Outputmain(){
                   value={userId}
                   label="Name"
                   onChange={pullChange}
+                  onOpen={fetchusers}
                 >
-                <MenuItem value={1}>{userLabels[1]}</MenuItem>
+                {users.map((name,index) => (
+                  <MenuItem key={index} value={name}>{name}</MenuItem>
+                ))}
+                {/* <MenuItem value={1}>{userLabels[1]}</MenuItem>
                 <MenuItem value={2}>{userLabels[2]}</MenuItem>
-                <MenuItem value={3}>{userLabels[3]}</MenuItem>
+                <MenuItem value={3}>{userLabels[3]}</MenuItem> */}
               </Select>
             </FormControl>
           </Box>

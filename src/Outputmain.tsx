@@ -102,7 +102,7 @@ export default function Outputmain(){
       const newEntry:TimeEntry = {
         id: crypto.randomUUID(), // ユニークなIDを生成
         time: diffSec,
-        userName: userLabels[userId],
+        userName: userLabels[Number(userId)],
         check:false,
         delete:false
       };
@@ -148,12 +148,12 @@ export default function Outputmain(){
     };
 
     // const [name, setName] = useState<string>('');
-    const [userId, setUserId] = useState<number>(0);
+    const [userId, setUserId] = useState<string>("");
 
     //プルダウン機能実装のため
-    const pullChange = (event: SelectChangeEvent<number | string>) => {
-        setUserId(Number(event.target.value));
-    };
+    const pullChange = (event: SelectChangeEvent<string>) => {
+        setUserId(event.target.value)
+    }
 
     //オブジェクトの型を簡単に作るためのテンプレート
     const userLabels: Record<number, string> = {
@@ -169,7 +169,7 @@ export default function Outputmain(){
         setNonamemess('ユーザーを選択してください')
       }
 
-      if (!userLabels[userId]){
+      if (!userLabels[Number(userId)]){
         return (
           <>
           <div>
@@ -246,7 +246,7 @@ export default function Outputmain(){
           </Box>
 
           <CustomTabPanel value={value} index={0}>
-            <Outputdisplay list={totallist} formatTime={formatTime} deletedata={deletedata} onCheck={onCheck} UserName={userLabels[userId]} disch={disch} setD={setDisch}/>
+            <Outputdisplay list={totallist} formatTime={formatTime} deletedata={deletedata} onCheck={onCheck} UserName={userLabels[Number(userId)]} disch={disch} setD={setDisch}/>
           </CustomTabPanel>
           <CustomTabPanel value={value} index={1}>
             <Outputdeletedisplay deletelist={totallist} formatTime={formatTime}/>
